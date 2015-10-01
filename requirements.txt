@@ -1,0 +1,5 @@
+Flask
+Flask-Cache
+Flask-WTF
+Werkzeug
+
