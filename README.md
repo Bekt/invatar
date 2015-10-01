@@ -1,12 +1,14 @@
 # Invatar
 
-Invatar provides an API for generating fully customizable SVG and image avatars 
+Invatar provides an "API" for generating fully customizable SVG and image avatars 
 with small text. Inspired from many messaging apps.
 
 *Por que?* Por que no?
 
 ## Demo
 Website: https://invatar0.appspot.com/
+
+[Screenshots](http://i.imgur.com/9Ru5jZ1.png)
 
 
 ### Defaults
@@ -31,7 +33,7 @@ Website: https://invatar0.appspot.com/
 ## Use Cases
 
 * Easier to identify users
-* More friendlier than a "No avatar" picture
+* Friendlier than a "No avatar" picture
 * Background colors are always consistent
 * Can use as a fallback picture for Gravatar (`?default=` flag) and
   other similar services
