@@ -1,0 +1,21 @@
+application: invatar0
+version: 1-0
+api_version: 1
+runtime: python27
+threadsafe: true
+
+handlers:
+
+- url: /.*
+  script: invatar.app.app
+  secure: always
+
+skip_files:
+# Default settings.
+- ^(.*/)?#.*#$
+- ^(.*/)?.*~$
+- ^(.*/)?.*\.py[co]$
+- ^(.*/)?.*/RCS/.*$
+- ^(.*/)?\..*$
+# Custom.
+- ^venv$
