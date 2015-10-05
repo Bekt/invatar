@@ -5,9 +5,14 @@ from wtforms import validators as vdr
 from flask_cache import Cache
 from flask_wtf import Form
 
+try:
+    from google.appengine.api import memcache
+    cache_type = 'gaememcached'
+except ImportError:
+    cache_type = 'simple'
 
-# Adjust cache type if not running on App Engine.
-cache = Cache(config={'CACHE_TYPE': 'gaememcached'})
+
+cache = Cache(config={'CACHE_TYPE': cache_type})
 
 
 def make_app(name):

@@ -7,7 +7,7 @@ threadsafe: true
 handlers:
 
 - url: /.*
-  script: invatar.app.app
+  script: run.app
   secure: always
 
 skip_files:

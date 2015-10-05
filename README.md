@@ -48,11 +48,10 @@ help with hosting, please reach out to me.
 ## Development
 
 ```bash
-$ pip install -t lib/ -r requirements.txt
+$ pip install -r requirements.txt
 
-$ dev_appserver.py .
+$ python run.py
 ```
-
 
 ## License
 MIT

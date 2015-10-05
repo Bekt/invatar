@@ -88,7 +88,3 @@ def _bg_color(colors=None, text='', h='salty-salt'):
     g = int(h[2:4], 16) % cut
     b = int(h[4:6], 16) % cut
     return '#{:02x}{:02x}{:02x}'.format(r, g, b)
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
