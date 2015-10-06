@@ -28,14 +28,17 @@ def make_svg(**options):
 
     svg = """
     <svg xmlns="http://www.w3.org/2000/svg"
-         width="{size}px" height="{size}px"
-        style="background-color: {bg}">
-      <text y="50%" x="50%"
-          text-anchor="middle" dominant-baseline="central"
-          fill="{color}"
-          style="font-family: {font_family}; font-size: {font_size}px">
-        {text}
-      </text>
+         width="{size}px" height="{size}px">
+        <g>
+            <rect x="0" y="0" width="{size}px" height="{size}px"
+                  fill="{bg}" ></rect>
+            <text y="50%" x="50%"
+                  text-anchor="middle" dominant-baseline="central"
+                  fill="{color}" style="font-family: {font_family};
+                  font-size: {font_size}px">
+                {text}
+            </text>
+        </g>
     </svg>
     """.format(**options)
 
