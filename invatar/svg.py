@@ -34,8 +34,7 @@ def make_svg(**options):
         </rect>
         <text y="50%" x="50%" fill="{color}"
               text-anchor="middle" dominant-baseline="central"
-              style="font-family: {font_family};
-              font-size: {font_size}px">
+              style="font-family: {font_family}; font-size: {font_size}px">
           {text}
         </text>
       </g>
