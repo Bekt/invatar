@@ -1,0 +1,30 @@
+# Continuous deployment with CircleCI.
+
+machine:
+  python:
+    version: 2.7.10
+  environment:
+    GCLOUD: /opt/google-cloud-sdk/bin/gcloud
+
+
+dependencies:
+  override:
+    - pip install -t lib/ -r requirements.txt
+    - sudo $GCLOUD --quiet components update app app-engine-python
+
+
+test:
+  pre:
+    - sudo $GCLOUD --quiet preview app run app.yaml --project=invatar0:
+        background: true
+    - sleep 5
+  override:
+    - curl --retry 2 --retry-delay 5 --fail -I "http://localhost:8080/svg/kb.jpg?s=200&h=y"
+
+
+deployment:
+  main:
+    branch: master
+    commands:
+      - sudo $GCLOUD auth activate-refresh-token $GCLOUD_EMAIL_PERSONAL $GCLOUD_TOKEN_PERSONAL
+      - sudo $GCLOUD --quiet preview app deploy app.yaml --promote --project=invatar0 --version=1-0

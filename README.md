@@ -1,4 +1,4 @@
-# Invatar
+# Invatar [![](https://circleci.com/gh/Bekt/invatar.svg?style=svg)](https://circleci.com/gh/Bekt/invatar)
 
 Invatar provides an "API" for generating fully customizable SVG and image avatars 
 with small text. Inspired from many messaging apps.
