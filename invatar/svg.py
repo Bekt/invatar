@@ -26,7 +26,7 @@ def make_svg(**options):
     dc.update(options)
     options = dc
 
-    svg = """
+    svg = u"""
     <svg xmlns="http://www.w3.org/2000/svg"
          width="{size}px" height="{size}px">
       <g>

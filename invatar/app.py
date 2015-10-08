@@ -44,22 +44,22 @@ def initials(ini):
     form = ApiForm(f.request.args)
     if not form.validate():
         return f.jsonify(error=form.errors), 400
-    options = _build_options(ini, form)
+    options = _build_options(ini, form.data)
     body = svg.make_svg(**options)
     return body
 
 
-def _build_options(text, form):
+def _build_options(text, data):
     """Builds and butters options for the `make_svg` method.
 
     :return (dict)
     """
-    options = {k:v for k,v in form.data.iteritems() if v}
+    options = {k:v for k,v in data.iteritems() if v}
     options['text'] = text.upper()
     if 's' in options:
         options['size'] = options['s']
     # Background color selection.
-    bg_args = {'text': text}
+    bg_args = {'text': options['text']}
     h = options.get('h', '').strip()
     if h:
         bg_args['h'] = h
@@ -70,7 +70,7 @@ def _build_options(text, form):
     return options
 
 
-def _bg_color(colors=None, text='', h='salty-salt'):
+def _bg_color(colors=None, text=u'', h=u'salty-salt'):
     """Selects a background color to use.
 
     If `colors` is given, the value is choosen from that.
@@ -79,7 +79,7 @@ def _bg_color(colors=None, text='', h='salty-salt'):
 
     :return (str)
     """
-    h = hashlib.md5(h + text).hexdigest()
+    h = hashlib.md5((h + text).encode('utf-8')).hexdigest()
     if colors:
         ind = int(h, 16) % len(colors)
         return colors[ind]
