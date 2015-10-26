@@ -48,9 +48,13 @@ help with hosting, please reach out to me.
 ## Development
 
 ```bash
-$ pip install -r requirements.txt
+$ pip install -r dev-requirements.txt
 
+# Running development server
 $ python run.py
+
+# Executing tests
+$ tox
 ```
 
 ## License
