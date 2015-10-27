@@ -2,8 +2,7 @@ import hashlib
 
 import flask as f
 
-import svg
-from invatar import (make_app, ApiForm)
+from . import (make_app, ApiForm, svg)
 
 # Main app.
 app = make_app(__name__)
@@ -54,7 +53,7 @@ def _build_options(text, data):
 
     :return (dict)
     """
-    options = {k:v for k,v in data.iteritems() if v}
+    options = {k: v for k, v in data.items() if v}
     options['text'] = text.upper()
     if 's' in options:
         options['size'] = options['s']
