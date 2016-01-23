@@ -28,7 +28,7 @@ Website: https://invatar0.appspot.com/
 |  `svg/abcd.jpg?s=150&font_size=50` | `svg/kb.jpg?s=150&font_family=Monospace` | `svg/md.jpg?s=150&h=my-user-id`
 | --- | --- | --- |
 | ![](https://invatar0.appspot.com/svg/abcd.jpg?s=150&font_size=50) | ![](https://invatar0.appspot.com/svg/kb.jpg?s=150&font_family=Monospace) | ![](https://invatar0.appspot.com/svg/md.jpg?s=150&h=my-user-id`)
-| Custom font size (in px)  | Custom font family | Provide a unique identifier with `h`. This is useful when you don't want two intials (different users?) hash to the same value.
+| Custom font size (in px)  | Custom font family | Provide a unique identifier with `h`. This is useful when you don't want two intials (different users?) hash to the same value (resulting in the same background color).
 
 ## Use Cases
 
